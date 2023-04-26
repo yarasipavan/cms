@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>Electrical Department</title>
+        <link rel="icon" href="/images/logo.png" type="image/icon type">
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="/stylesheets/electriccs.css" rel="stylesheet" />
+        <link href="/stylesheets/reset.css" rel="stylesheet" />
+        <script src="/javascripts/elctricscript.js"></script>
+        <script src="/js/bootstrap.bundle.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        <style>
+            @media print{
+                .no-print{
+                    display: none;
+                }
+            }
+        </style>
+        <script>
+            function hide()
+            {
+                var x=document.getElementsByClassName('Dis');
+                for(var i=0;i<x.length;i++)
+                    x[i].removeAttribute('disabled');
+            }
+           function Modal(val)
+           {
+               console.log(val);
+               var y=document.getElementById("complaintid");
+               y.value=val;
+
+           }
+        </script>
+    </head>
+    <body>
+      <div class="d-flex" id="wrapper">
+        <!-- Sidebar-->
+        <div class="border-end bg-white" id="sidebar-wrapper">
+            <div class="sidebar-heading border-bottom bg-light">Maintenance System</div>
+            <div class="list-group list-group-flush accordion-group" id="globalgroup">
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/electric"><b>Home</b></a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" data-bs-toggle="collapse" data-parent="#globalgroup" href="#collapse1" id="group1" onclick="makeactive('group1')"><b>Service Requests </b>
+                    <svg xmlns="./icons-1.3.0/icons/caret-down-fill.svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                        <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                      </svg>
+                </i></a>
+                <div id="collapse1" class="panel-collapse collapse">
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/electric/latest">Latest Requests</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/electric/pending">Pending Requests</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/electric/inprogress">In Progress Requests</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/electric/completed">Completed Requests</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/electric/closed">Closed Requests</a>
+                  </div>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" data-bs-toggle="collapse" data-parent="#globalgroup" href="#collapse2" id="group2" onclick="makeactive('group2')"><b>Electricians </b>
+                    <svg xmlns="./icons-1.3.0/icons/caret-down-fill.svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                        <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                      </svg>
+                </a>
+                <div id="collapse2" class="panel-collapse collapse">
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/electric/addelectrician">Add Electrician</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/electric/removeelectrician">Remove Electrician</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/electric/electricianlist">Electricians List</a>
+                  </div>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" data-bs-toggle="collapse" data-parent="#globalgroup" href="#collapse3" id="group3" onclick="makeactive('group3')"><b>Locations </b>
+                    <svg xmlns="./icons-1.3.0/icons/caret-down-fill.svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                        <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                      </svg>
+                </a>
+                <div id="collapse3" class="panel-collapse collapse">
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/electric/addlocation">Add Location</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/electric/removelocation">Remove Location</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/electric/locationlist">View Locations</a>
+                  </div>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/electric/dutyassignment"><b>Duty Assignment</b></a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" data-bs-toggle="collapse" data-parent="#globalgroup" href="#collapse4" id="group4" onclick="makeactive('group4')"><b>Inventory </b>
+                    <svg xmlns="./icons-1.3.0/icons/caret-down-fill.svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                        <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                      </svg>
+                </a>
+                <div id="collapse4" class="panel-collapse collapse">
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/electric/addinventory">Add New Items to Inventory</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/electric/updateinventory">Update Inventory</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/electric/checkinventory">Check Inventory</a>
+                  </div>
+                
+            </div>
+        </div>
+        <!-- Page content wrapper-->
+        <div id="page-content-wrapper">
+            <!-- Top navigation-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom"    id="navigationbar">
+                <div class="container-fluid">
+                    <button class="btn btn-primary" id="sidebarToggle">
+                        <svg xmlns="./icons-1.3.0/icons/list.svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                          </svg>
+                        Menu</button>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                            <li class="nav-item active"><a class="nav-link" href="#!">Home</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <svg xmlns="./icons-1.3.0/icons/person-circle.svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                                      </svg>
+                                      <%=(typeof username!='undefined')? username:''%></a>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="/electric/electricreset">Reset Password</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="/authlogout">Logout</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+                <!-- Page content-->
+                <div class="container-fluid">
+                    <div class="overflow-auto">
+                       
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th colspan="8" scope="col" style="text-align: center; font-size:20px;">In-Progress Service Requests</th>
+                            </tr>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Complaint ID</th>
+                            <th scope="col">User MailID</th>
+                            <th scope="col">Complaint</th>
+                            <th scope="col">Location</th>
+                            <th scope="col">Electrician</th>
+                            <th scope="col" colspan="2">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <%
+                            if(data.length!=0){
+                            var i=1;
+                            data.forEach(function(data1){
+                            %>
+                            <form method="post" action="" onsubmit="hide()">
+                            <tr>
+                            
+                            <th scope="row"><%=i%></th>
+                            <td><input type="text" name="cid" id="<%=data1.cid%>" class="Dis" style="border: none; width: auto;" value=<%=data1.cid%> disabled></td>
+                            <td><%=data1.mailid%></td>
+                            <td><b><%=data1.complaint%></b><br><%=data1.description%></td>
+                            <td><b><%=data1.location%></b><br><%=data1.locationdes%></td>
+                            <%elename.forEach(function(elec){
+                                if(elec.id==data1.eid){
+                                %>
+                                    <td><%=elec.name%></td>
+                                <%}%>
+                                <%})%>
+                                <td>
+                                    <button type="submit" class="btn btn-sm btn-primary" formaction="/mvpending"  data-whatever="@mdo">Move to Pending</button>
+                                </td>
+                                <td>
+                                   <!-- <button type="submit" class="btn btn-sm btn-primary" formaction="/close">Close</button>-->
+                                   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="<%=data1.cid%>" onclick="Modal('<%=data1.cid%>')" id="open-modal">Close</button>
+                                </td>
+                            </tr> 
+                        </form>                     
+                          <%  i++; }) %>
+                        <% } else{ %>
+                            <tr>
+                                <td colspan="7">No Data Found</td>
+                            </tr>
+                        <% } %>
+                        </tbody>
+                      </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Invetory Used</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form id="form" method="post" action="/inventoryused">
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Complaint ID:</label>
+                        <input type="text" class="form-control" id="complaintid" name="cid" readonly>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="recipient-name" class="col-form-label">Item ID:</label>
+                                <!-- <input type="number" class="form-control" id="itemid" name="itemid[]" required> -->
+                                
+                                <select class="form-select" name="itemid[]"  id="itemselect" required onchange="itemsel()">
+                                 
+                                  <option value="" data-stock="" selected disabled>Id(Item-Stock)</option>
+                                  <option value="none">None</option>
+                                  <%
+                                  items.forEach(function(item){%>
+                                      <option value="<%=item.itemid%>" data-stock="<%=item.quantity%>"><%=item.itemid%> (<%=item.itemname%> - <%=item.quantity%>)</option>
+                                      
+                                  <%})%>
+                                  
+                                  
+                                  
+                              </select>
+
+                              </div>
+                        </div>
+                        <div class="col" id="quan">
+                            <div class="mb-3">
+                                <label for="recipient-name" class="col-form-label">Quantity:</label>
+                                <input type="number" class="form-control" id="quantity" name="quantity[]" onkeyup="verifystock()" required>
+                                <span id="stock_span"></span>
+                              </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="mt-3">
+                            <button type="button" class="btn btn-primary btn-sm" id="add-more-btn" onclick="add_field()" >Add More</button>
+                        </div>
+                      </div>
+                
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="refresh" onclick="window.location.reload()">Refresh</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-success" id="close-btn">Close Complaint</button>
+              </div>
+            </form>
+            </div>
+          </div>
+        </div>
+        <script>
+           
+          document.getElementById('add-more-btn').setAttribute("disabled",true);
+          document.getElementById('close-btn').setAttribute("disabled",true); 
+
+          var verify=false;
+
+          function verifystock()
+          {
+              verify=false
+              var quantity=parseInt(document.getElementById('quantity').value)
+              var stock=parseInt(document.getElementById('quantity').max);
+              // console.log(quantity+" - "+ stock)
+              if((quantity<=stock)|| quantity<1){
+                verify=true;
+                document.getElementById('add-more-btn').removeAttribute("disabled");
+                document.getElementById('close-btn').removeAttribute("disabled");
+                document.getElementById('quantity').style.borderColor="green";
+              }
+              else
+              {
+                verify=false;
+                document.getElementById('add-more-btn').setAttribute("disabled",true)
+                document.getElementById('close-btn').setAttribute("disabled",true)
+                document.getElementById('quantity').style.borderColor="red"
+              }
+          }
+          var adds=0;
+            function add_field(){
+              document.getElementById('add-more-btn').setAttribute("disabled",true);
+              document.getElementById('close-btn').setAttribute("disabled",true); 
+              // document.getElementById("itemselect").setAttribute("d",true)
+              var doc=document.getElementById("itemselect");
+              for(var i=0;i<doc.length;i++)
+              {
+                if(!doc.options[i].selected){
+                  doc.options[i].disabled=true
+                }
+              }
+              document.getElementById("quantity").setAttribute("readonly",true)
+              var y=document.createElement("div");
+              y.innerHTML='<div class="row"> <div class="col"> <div class="mb-3"> <label for="recipient-name" class="col-form-label">Item ID:</label> <!-- <input type="number" class="form-control" id="itemid" name="itemid[]" required> --> <select class="form-select" name="itemid[]"  id="itemselect" required onchange="itemsel()"> <option value="" data-stock="" selected disabled>Id(Item-Stock)</option> <% items.forEach(function(item){%> <option value="<%=item.itemid%>" data-stock="<%=item.quantity%>"><%=item.itemid%> (<%=item.itemname%> - <%=item.quantity%>)</option> <%})%> </select> </div> </div> <div class="col"> <div class="mb-3"> <label for="recipient-name" class="col-form-label">Quantity:</label> <input type="number" class="form-control" id="quantity" name="quantity[]" onkeyup="verifystock()" required> <span id="stock_span"></span> </div> </div> </div>';
+              var x = document.getElementById("form");
+              var pos = x.childElementCount;
+              x.insertBefore(y, x.childNodes[pos-adds]);
+              adds+=1;
+                
+            }
+            function itemsel(){
+              var x=document.getElementById('itemselect');
+              if(x.options[x.selectedIndex].value==='none')
+              {
+
+                document.getElementById('quantity').removeAttribute("required");
+                document.getElementById('quan').setAttribute("hidden",true);
+                document.getElementById('close-btn').removeAttribute("disabled"); 
+
+              }else{
+                document.getElementById('quan').removeAttribute("hidden");
+                document.getElementById('close-btn').setAttribute("disabled",true);
+                var stock=x.options[x.selectedIndex].getAttribute("data-stock");
+                document.getElementById('stock_span').innerHTML="Stock="+stock;
+                document.getElementById('quantity').setAttribute("max",stock);
+                document.getElementById('quantity').setAttribute("min",1);
+              }
+            }
+             
+          
+        </script>
+    </body>
+</html>

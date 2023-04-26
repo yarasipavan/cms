@@ -1,0 +1,26 @@
+#changepass
+{   margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (min-width: 992px) {
+    #changepass{
+        width: 50%;
+    }
+    #tablelist{
+        width: 70%;
+    }
+    #locationlist{
+        width: 80%;
+    }
+}
+#tablelist
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+#locationlist
+{
+    margin-left: auto;
+    margin-right: auto;   
+}
